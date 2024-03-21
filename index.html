@@ -23,13 +23,11 @@
         }
  
         // 根据不同的终端，跳转到不同的地址
-        var theUrl = 'http://www.XXX.com';
-        alert(theUrl)
         if(Terminal.platform.android){
-            theUrl = '你的Android APP对应下载地址：apk文件地址';
+            theUrl = 'ztxAndroid APP对应下载地址：apk文件地址';
             alert(theUrl)
         }else if(Terminal.platform.iPhone){
-            theUrl = '你的iPhone APP对应下载地址：APP Store地址';
+            theUrl = 'ztxiPhone APP对应下载地址：APP Store地址';
             alert(theUrl)
         }
     </script>
