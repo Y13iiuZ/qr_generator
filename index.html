@@ -21,15 +21,21 @@
             // 辨别移动终端的语言：zh-cn、en-us、ko-kr、ja-jp...
             language : (navigator.browserLanguage || navigator.language).toLowerCase()
         }
- 
-        // 根据不同的终端，跳转到不同的地址
-        if(Terminal.platform.android){
-            theUrl = 'ztxAndroid APP对应下载地址：apk文件地址';
-            alert(theUrl)
-        }else if(Terminal.platform.iPhone){
-            theUrl = 'ztxiPhone APP对应下载地址：APP Store地址';
-            alert(theUrl)
+        const sleep = () => {
+            return new Promise(resolve => setTimeout(resolve, 1000));
         }
+
+        sleep.then(() => {
+            alert('...判断中')
+            // 根据不同的终端，跳转到不同的地址
+            if(Terminal.platform.android){
+                theUrl = 'ztxAndroid APP对应下载地址：apk文件地址';
+                alert(theUrl)
+            }else if(Terminal.platform.iPhone){
+                theUrl = 'ztxiPhone APP对应下载地址：APP Store地址';
+                alert(theUrl)
+            }
+        })
     </script>
 </head>
 <body>
