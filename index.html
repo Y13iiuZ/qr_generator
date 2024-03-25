@@ -32,12 +32,14 @@
         }
         const sleep = () => {
             return new Promise(resolve => {
-                setTimeout(()=>{resolve()}, 1000)
+                setTimeout(()=>{
+                    alert('...判断中');
+                    resolve()
+                }, 1000)
             });
         }
 
         sleep().then(() => {
-            alert('...判断中')
             // 根据不同的终端，跳转到不同的地址
             if(Terminal.platform.android){
                 theUrl = 'ztxAndroid APP对应下载地址：apk文件地址';
