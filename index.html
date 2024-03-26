@@ -39,7 +39,9 @@
                 setTimeout(()=>{
                     alert('...判断中');
                     Doc.textContent = '判断中';
-                    resolve()
+                    setTimeout(()=>{
+                        resolve()
+                    },1000)
                 }, 1000)
             });
         }
