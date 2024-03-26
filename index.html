@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>QR_跳板自研发_ztx</title>
+</head>
+<body>
+    <span id="demo">开始</span>
     <script type="text/javascript">
         // 获取终端的相关信息
         var Terminal = {
@@ -30,11 +33,12 @@
             // 辨别移动终端的语言：zh-cn、en-us、ko-kr、ja-jp...
             language : (navigator.browserLanguage || navigator.language).toLowerCase()
         }
+        const Doc = document.querySelector('#demo');
         const sleep = () => {
             return new Promise(resolve => {
                 setTimeout(()=>{
                     alert('...判断中');
-                    console.log('...判断中');
+                    Doc.textContent = '判断中';
                     resolve()
                 }, 1000)
             });
@@ -44,16 +48,14 @@
             // 根据不同的终端，跳转到不同的地址
             if(Terminal.platform.android){
                 theUrl = 'ztxAndroid APP对应下载地址：apk文件地址';
-                console.log('...ztxAndroid');
                 alert(theUrl)
+                Doc.textContent = 'ztxAndroid';
             }else if(Terminal.platform.iPhone){
                 theUrl = 'ztxiPhone APP对应下载地址：APP Store地址';
-                console.log('...ztxiPhone');
                 alert(theUrl)
+                Doc.textContent = 'ztxiPhone';
             }
         })
     </script>
-</head>
-<body>
 </body>
 </html>
